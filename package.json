@@ -2,10 +2,12 @@
   "name": "up2bar",
   "version": "1.0.0",
   "description": "## Premise Webpage where bar-seekers can seek bars in their present or future locations",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
