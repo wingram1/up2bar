@@ -7,7 +7,7 @@ const exphbs = require("express-handlebars");
 
 // middleware
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3006;
 const helpers = require("./utils/helpers");
 const sequelize = require("./config/connection");
 const hbs = exphbs.create({ helpers });
