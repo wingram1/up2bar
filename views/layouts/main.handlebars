@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Up2Bar</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>
+                <a href="/">Up2Bar</a>
+            </h1>
+            <nav>
+                {{!-- space if helpers --}}
+                <a href="/dashboard">2Nite's Best and Worst</a>
+                <button id="logout" class="btn">logout</button>
+                {{!-- --}}
+                <a href="/login">login</a>
+                {{!-- --}}
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            Please Drink and Comment responsibly®
+        </footer>
+    </div>
+    {{!-- --}}
+    <script src="/javascript/logout.js"></script>
+</body>
+
+</html>
