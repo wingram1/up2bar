@@ -16,7 +16,8 @@
             </h1>
             <nav>
                 
-                <a href="/dashboard">2Nite's Best and Worst</a>
+                <a href="/">2Nite's Best and Worst</a>
+                <a href="/dashboard">dashboard</a>
                 <button id="logout" class="btn">logout</button>
                 
                 <a href="/login">login</a>
@@ -30,9 +31,9 @@
             Please Drink and Comment responsibly®
         </footer>
     </div>
-    
+    {{#if loggedIn}}
     <script src="/js/logout.js"></script>
-    
+    {{/if}}
 </body>
 
 </html>
