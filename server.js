@@ -15,7 +15,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // establish session rules
 const sess = {
-  secret: "secretSquirrel",
+  secret: process.env.secret,
   cookie: {
     // end session on idle for 10 minutes
     expires: 10 * 60 * 1000,
