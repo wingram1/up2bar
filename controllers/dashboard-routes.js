@@ -4,7 +4,8 @@ const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 // get function for all posts that meet rules
-router.get("/", withAuth, (req, res) => {
+router.get("/", (req, res) => {
+  // res.render('dashboard');
   Post.findAll({
     where: {
       user_id: req.session.user_id,
