@@ -8,30 +8,29 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <header>
+    {{! <div class="wrapper"> }}
+    <header>
+      <div>
+        <h1>
+          <a href="/">Up2Bar</a>
+        </h1>
+      </div>
+      <div class="user-options">
+        {{! space if helpers }}
+        <a id="dashboard-link" href="/dashboard">2Nite's Best and Worst</a>
         <div>
-          <h1>
-            <a href="/">Up2Bar</a>
-          </h1>
+            <a id="logout" href="/">logout</button>
+            {{! }}
+            <a href="/login">login</a>
+            {{! }}
         </div>
-        <div class="spacer"></div>
-        <nav class="user-options">
-          {{! space if helpers }}
-          <a href="/dashboard">2Nite's Best and Worst</a>
-          <button id="logout" class="btn">logout</button>
-          {{! }}
-          <a href="/login">login</a>
-          {{! }}
-        </nav>
-      </header>
-      <main>
-        {{{body}}}
-      </main>
-      <footer>
-        Please Drink and Comment responsibly®
-      </footer>
-    </div>
+      </div>
+    </header>
+    {{{body}}}
+    <footer>
+      <h3>Please Drink and Comment responsibly®</h3>
+    </footer>
+    {{! </div> }}
     {{! }}
     <script src="/javascript/logout.js"></script>
   </body>

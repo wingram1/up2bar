@@ -5,7 +5,7 @@ const withAuth = require("../../utils/auth");
 // get all users
 router.get("/", (req, res) => {
   User.findAll({
-    attributes: { exclude: ["password"] },
+    // attributes: { exclude: ["password"] },
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
@@ -71,7 +71,7 @@ router.post("/", (req, res) => {
 });
 
 // post route for login
-router.post("/login", (req, res) => {
+router.post('/login', (req, res) => {
   User.findOne({
     where: {
       email: req.body.email,
@@ -101,7 +101,7 @@ router.post("/login", (req, res) => {
 });
 
 // post route to logout
-router.post("/logout", (req, res) => {
+router.post("/logout", withAuth, (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
