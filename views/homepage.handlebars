@@ -1,4 +1,4 @@
-    <section>
+    <section class="location">
       <div id="location-indicator">
         <h2>Showing posts for:</h2>
       </div>
@@ -61,16 +61,16 @@
         <button type="submit" id="search-button">Search</button>
       </form>
     </section>
-    <main>
+    <div class="homepage-content">
       <!-- map container -->
       <div id="map-container">
           map here
       </div>
       <!-- post container -->
-      <div id="post-container">
-          
+      <div id="post-container" class="container">
+
         {{#each posts as |post|}}
             {{> post-info post}}
         {{/each}}
       </div>
-    </main>
+    </div>
