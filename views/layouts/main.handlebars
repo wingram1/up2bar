@@ -1,38 +1,39 @@
+<!DOCTYPE html> 
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Up2Bar</title>
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
 
-  <body>
-    {{! <div class="wrapper"> }}
-    <header>
-      <div>
-        <h1>
-          <a href="/">Up2Bar</a>
-        </h1>
-      </div>
-      <div class="user-options">
-        {{! space if helpers }}
-        <a id="dashboard-link" href="/dashboard">2Nite's Best and Worst</a>
-        <div>
-            <a id="logout" href="/">logout</button>
-            {{! }}
-            <a href="/login">login</a>
-            {{! }}
-        </div>
-      </div>
-    </header>
-    {{{body}}}
-    <footer>
-      <h3>Please Drink and Comment responsibly®</h3>
-    </footer>
-    {{! </div> }}
-    {{! }}
-    <script src="/javascript/logout.js"></script>
-  </body>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>
+                <a href="/">Up2Bar</a>
+            </h1>
+            <nav>
+                
+                <a href="/">2Nite's Best and Worst</a>
+                <a href="/dashboard">dashboard</a>
+                <button id="logout" class="btn">logout</button>
+                
+                <a href="/login">login</a>
+                
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            Please Drink and Comment responsibly®
+        </footer>
+    </div>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
 
 </html>
