@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/login.css" />
     <link rel="stylesheet" href="/css/single-post.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
   </head>
 
   <body>
@@ -19,12 +20,12 @@
       </div>
       <div class="user-options">
         {{! space if helpers }}
-        <a id="dashboard-link" href="/dashboard">2Nite's Best and Worst</a>
+        <a id="dashboard-link" href="/dashboard">Dashboard</a>
         <div>
           {{#if loggedIn}}
-            <a id="logout" href="/">logout</a>
+            <a id="logout" href="/">Log out</a>
           {{else}}
-            <a href="/login">login</a>
+            <a href="/login">Log in</a>
           {{/if}}
         </div>
       </div>

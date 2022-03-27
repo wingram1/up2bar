@@ -54,10 +54,11 @@ header a {
 .user-options {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 #dashboard-link {
-  padding-top: 15px;
+  margin: auto 0 auto 0;
 }
 
 .user-options div {
@@ -65,12 +66,16 @@ header a {
   flex-direction: column;
   align-items: center;
 
-  padding: 10px 0 0 10px;
+  margin: auto 0 auto 10px;
 }
 
 main {
   min-height: 79vh;
   height: fit-content;
+}
+
+button {
+  width: fit-content;
 }
 
 .location {
@@ -105,6 +110,7 @@ main {
   border: solid var(--border-white) 1px;
   color: var(--secondary-text);
   border-radius: 5px;
+  padding-left: 10px;
 }
 
 #map-container {
@@ -113,9 +119,9 @@ main {
   border: solid var(--border-white) 1px;
 }
 
-#map-container:before {
+/* #map-container:before {
   padding-top: 100%;
-}
+} */
 
 #post-container {
   /* min-height: 200px; */
@@ -133,7 +139,7 @@ main {
   background-color: var(--bg-gold);
   border: var(--border-dark) solid 1px;
   border-radius: 10px;
-  margin: 10px;
+  margin: 15px 10px 5px 10px;
   padding: 10px;
 }
 
@@ -166,14 +172,6 @@ footer {
 /* media queries */
 /* tablets and smaller laptops */
 @media only screen and (max-width: 768px) {
-  .spacer {
-    visibility: hidden;
-  }
-
-  .user-options {
-    justify-content: space-around;
-  }
-
   .homepage-content {
     flex-direction: column;
     justify-content: center;
