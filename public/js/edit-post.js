@@ -26,6 +26,15 @@ async function editFormHandler(event) {
   }
 }
 
+function cancelBtnHandler(event) {
+  event.preventDefault();
+  window.location.replace("/dashboard/");
+}
+
 document
   .querySelector(".edit-post-form")
   .addEventListener("submit", editFormHandler);
+
+document
+  .querySelector("#cancel-btn")
+  .addEventListener("click", cancelBtnHandler);
