@@ -1,0 +1,18 @@
+<div class="single-post-main">
+    <article class= "container single-post-container">
+    
+    <div>
+    <input class="post-title-edit" value="{{post.title}}"></input>
+    <p class="meta">By {{post.user.username}} on {{post.created_at}}</p>
+    <form class="post-content-container edit-post-form">
+        <textarea name="edit-post-textarea" class="edit-post-textarea">{{post.post_content}}</textarea>
+            <div class="post-options edit-post-options">
+            <button type="submit" id="save-edit-post">Save</button>
+            <button id="cancel">Cancel</button>
+            </div>
+    </form>
+        {{> comments post.comments}}
+    </article>
+</div>
+
+<script src="/js/edit-post.js"></script>

@@ -33,6 +33,12 @@
   justify-content: right;
 }
 
+.edit-post-options {
+  margin: 0 0 0 auto;
+  padding-right: 0;
+  margin-bottom: 20px;
+}
+
 .post-options a {
   margin-right: 10px;
   color: inherit;
