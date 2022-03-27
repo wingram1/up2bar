@@ -1,12 +1,16 @@
 <div class="comments">
-    {{#each this}}
+  {{#each this}}
     <section class="comment">
-        <div class="meta">
-            {{user.username}} on {{created_at}}
-        </div>
-        <div class="text">
-            {{comment_text}}
-        </div>
+      <div class="meta">
+        {{user.username}}
+        on
+        {{created_at}}
+      </div>
+      <div class="text">
+        {{comment_text}}
+      </div>
     </section>
-    {{/each}}
+  {{else}}
+    <p>No comments. Be the first to respond!</p>
+  {{/each}}
 </div>

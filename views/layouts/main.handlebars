@@ -6,6 +6,7 @@
     <title>Up2Bar</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/single-post.css" />
   </head>
 
   <body>
@@ -20,10 +21,11 @@
         {{! space if helpers }}
         <a id="dashboard-link" href="/dashboard">2Nite's Best and Worst</a>
         <div>
-            <a id="logout" href="/">logout</button>
-            {{! }}
-            <a href="/login">login</a>
-            {{! }}
+            {{!-- {{#if loggedIn}} --}}
+              <a id="logout" href="/">logout</button>
+            {{!-- {{else}} --}}
+              <a href="/login">login</a>
+            {{!-- {{/if}} --}}
         </div>
       </div>
     </header>

@@ -1,17 +1,23 @@
-<article class="post">
-  <div class="title">
-    <h2><a href="/post/{{id}}">{{title}}</a></h2>
+<div class="post-info-main">
+  <div class="container post post-info-container">
+    <article class="post-info">
+      <div class="title">
+        <h2><a href="/post/{{id}}">{{title}}</a></h2>
+      </div>
+      <div class="content">
+        {{post_content}}
+      </div>
+      <div class="meta">
+        Posted by
+        {{user.username}}
+        on
+        {{created_at}}
+        |
+        <br />
+        <a href="/post/{{id}}">{{comments.length}} comment(s) on this post</a>
+      </div>
+      {{!-- access comments partial --}}
+      {{> comments post.comments}}
+    </article>
   </div>
-  <div class="content">
-    {{post_content}}
-  </div>
-  <div class="meta">
-    Posted by
-    {{user.username}}
-    on
-    {{created_at}}
-    |
-    <br />
-    <a href="/post/{{id}}">{{comments.length}} comment(s) on this post</a>
-  </div>
-</article>
+</div>
