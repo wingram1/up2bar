@@ -69,7 +69,7 @@ header a {
 }
 
 main {
-  min-height: 85%;
+  min-height: 79vh;
   height: fit-content;
 }
 

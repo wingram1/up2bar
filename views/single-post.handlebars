@@ -1,19 +1,25 @@
-{{> post-info post}}
-
-{{#if loggedIn}}
-<form class="comment-form">
+<div class="single-post-main">
+    <article class= "container single-post-container">
+    
     <div>
-        <textarea name="comment-body"></textarea>
+    <h2 class="post-title"><b>{{post.title}}</b></h2>
+    <p class="meta">By {{post.user.username}} on {{post.created_at}}</p>
+    <div class="post-content-container">
+        {{!-- TODO: make link to user profile? --}}
+        <p>{{post.post_content}}</p>
     </div>
+    {{#if loggedIn}}
+    <form class="comment-form">
+        <textarea class="comment-textarea" name="comment-body"></textarea>
+        <div>
+            <button id="comment-submit" type="submit">Add Comment</button>
+        </div>
+    </form>
+    {{/if}}
+    {{> comments post.comments}}
 
-    <div>
-        <button type="submit">Add Comment</button>
-    </div>
-</form>
-{{/if}}
-
-{{> comments post.comments}}
-
-{{#if loggedIn}}
-<script src="/js/comment.js"></script>
-{{/if}}
+    {{#if loggedIn}}
+    <script src="/js/comment.js"></script>
+    {{/if}}
+    </article>
+</div>
