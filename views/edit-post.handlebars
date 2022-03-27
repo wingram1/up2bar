@@ -5,11 +5,11 @@
     <input name="post-title"class="post-title-edit" value="{{post.title}}"></input>
     <p class="meta">By {{post.user.username}} on {{post.created_at}}</p>
     <form class="post-content-container edit-post-form">
-        <textarea name="edit-post-textarea" class="edit-post-textarea">{{post.post_content}}</textarea>
+        <textarea name="edit-post-content" class="edit-post-textarea">{{post.post_content}}</textarea>
             <div class="post-options edit-post-options">
             <button type="submit">Save</button>
-            <button id="delete">Delete</button>
-            <button id="cancel">Cancel</button>
+            <button id="delete-post-btn">Delete</button>
+            <button id="cancel-btn">Cancel</button>
             </div>
     </form>
         {{> comments post.comments}}
@@ -17,4 +17,4 @@
 </div>
 
 <script src="/js/edit-post.js"></script>
-<script src="/js/delete-post.js"></script>
+{{!-- <script src="/js/delete-post.js"></script> --}}
