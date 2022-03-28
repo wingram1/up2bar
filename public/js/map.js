@@ -5,7 +5,7 @@ const mapDivEl = document.querySelector("#map");
 function getLocation() {
   // if browser supports location, prompt for location and generate map
   if (navigator.geolocation) {
-    var userLocation = navigator.geolocation.getCurrentPosition(getPosition);
+    navigator.geolocation.getCurrentPosition(getPosition);
   } else {
     //   else hardcode location to Nashville
     getMap(36.1627, -86.7816);
@@ -54,5 +54,35 @@ function getMap(lat, lon) {
   }
 }
 
+// sample post
+let post_1 = {
+  id: 20,
+  title: "Come see aliens at the Flying Saucer!",
+  post_content:
+    "Shit's wild, yo! You need to see how fast they're downing these shots!",
+  user_id: 4,
+  lat: 35.1637,
+  lon: -89.7935,
+};
+
+// test function for pop-ups
+function mapPost(post) {
+  // add marker
+  L.marker([post.lat, post.lon])
+    .addTo(map)
+    .bindPopup(
+      `
+      <div class="post-popup">
+        <a class="popup-link" href="/post/${post.id}"><h2>${post.title}</h2></a>
+            <p> ${post.post_content}</p>
+      </div>`,
+      {
+        closeOnClick: false,
+        autoClose: false,
+      }
+    );
+}
+
 getLocation();
 getMap(36.1627, -86.7816);
+mapPost(post_1);

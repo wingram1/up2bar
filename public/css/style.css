@@ -199,6 +199,21 @@ footer {
   }
 }
 
+.leaflet-popup-content-wrapper {
+  background-color: var(--bg-gold);
+  color: var(--secondary-text);
+}
+
+.post-popup {
+  color: var(--secondary-text);
+  text-decoration: none;
+}
+
+.post-popup a {
+  color: var(--secondary-text);
+  text-decoration: none;
+}
+
 /* mobile MQ */
 @media only screen and (max-width: 480px) {
   #map-container {
