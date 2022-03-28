@@ -125,9 +125,9 @@ button {
   border: solid var(--border-white) 1px;
 }
 
-/* #map-container:before {
-  padding-top: 100%;
-} */
+#map {
+  height: 100%;
+}
 
 #post-container {
   /* min-height: 200px; */
