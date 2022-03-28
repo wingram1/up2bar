@@ -54,6 +54,21 @@ header div {
 
 header a {
   color: inherit;
+  text-decoration: none;
+}
+
+#homepage-link {
+  display: flex;
+  flex-direction: row;
+}
+
+#homepage-link h1 {
+  font-size: 36px;
+  margin: auto 10px 5px 0;
+}
+
+#homepage-link img {
+  height: 90%;
 }
 
 .user-options {

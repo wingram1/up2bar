@@ -67,8 +67,19 @@ let post_1 = {
 
 // test function for pop-ups
 function mapPost(post) {
+  var flagIcon = L.Icon.extend({
+    options: {
+      iconUrl: "/images/flag-icon.png",
+      iconSize: [40, 50],
+      iconAnchor: [22, 94],
+      popupAnchor: [-3, -76],
+    },
+  });
+
+  var postIcon = new flagIcon();
+
   // add marker
-  L.marker([post.lat, post.lon])
+  L.marker([post.lat, post.lon], { icon: postIcon })
     .addTo(map)
     .bindPopup(
       `
