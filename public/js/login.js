@@ -42,10 +42,13 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
-    } else {
-      alert(response.statusText);
+      setTimeout(() => {
+        document.location.replace("/dashboard");
+        console.log("you are now logged in");
+      }, 100);
     }
+  } else {
+    alert(response.statusText);
   }
 }
 
