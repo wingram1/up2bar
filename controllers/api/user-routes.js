@@ -32,7 +32,7 @@ router.get("/:id", (req, res) => {
           model: Post,
           attributes: ["title"],
         },
-      }
+      },
     ],
   })
     .then((dbUserData) => {
@@ -71,7 +71,7 @@ router.post("/", (req, res) => {
 });
 
 // post route for login
-router.post('/login', (req, res) => {
+router.post("/login", (req, res) => {
   User.findOne({
     where: {
       email: req.body.email,
