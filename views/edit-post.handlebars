@@ -3,7 +3,7 @@
     
     <div>
     <input name="post-title"class="post-title-edit" value="{{post.title}}"></input>
-    <p class="meta">By {{post.user.username}} on {{post.created_at}}</p>
+    <p class="meta">By {{post.user.username}} on {{format_date post.created_at}}</p>
     <form class="post-content-container edit-post-form">
         <textarea name="edit-post-content" class="edit-post-textarea">{{post.post_content}}</textarea>
             <div class="post-options edit-post-options">

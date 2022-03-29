@@ -4,7 +4,7 @@ const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 // get routes to grab all
-router.get("/", withAuth, (req, res) => {
+router.get("/", (req, res) => {
   Post.findAll({
     attributes: ["id", "title", "created_at", "post_content"],
     order: [["created_at", "DESC"]],
@@ -25,7 +25,10 @@ router.get("/", withAuth, (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render("homepage", { posts });
+      res.render("homepage", { 
+        posts,
+        loggedIn: req.session.loggedIn
+      });
     })
     .catch((err) => {
       console.log(err);
