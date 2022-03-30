@@ -29,6 +29,18 @@ Post.init(
         key: "id",
       },
     },
+    bar_name: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    post_lat: {
+      type: DataTypes.DECIMAL(8,6),
+      allowNull: false,
+    },
+    post_lon: {
+      type: DataTypes.DECIMAL(9,6),
+      allowNull: false
+    }
   },
   {
     sequelize,
