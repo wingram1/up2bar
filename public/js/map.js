@@ -80,16 +80,26 @@ function mapPost(post) {
   // add marker
   L.marker([post.post_lat, post.post_lon], { icon: postIcon })
     .addTo(map)
-    .bindPopup(
-      `
-      <div class="post-popup">
-        <a class="popup-link" href="/post/${post.id}"><h2>${post.title}</h2></a>
-            <p> ${post.post_content}</p>
-      </div>`,
-      {
-        autoClose: false,
-      }
-    );
+    .bindPopup(renderPostPopup(post), {
+      autoClose: false,
+    });
+}
+
+function renderPostPopup(post) {
+  if (post.bar_name) {
+    return `
+    <div class="post-popup">
+      <a class="popup-link" href="/post/${post.id}"><h2>${post.title}</h2></a>
+      <p class="meta">At: ${post.bar_name}</p>
+          <p> ${post.post_content}</p>
+    </div>`;
+  } else {
+    return `
+  <div class="post-popup">
+    <a class="popup-link" href="/post/${post.id}"><h2>${post.title}</h2></a>
+        <p> ${post.post_content}</p>
+  </div>`;
+  }
 }
 
 var mapClick = function (e) {

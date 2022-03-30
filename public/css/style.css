@@ -227,18 +227,35 @@ footer {
 }
 
 .leaflet-popup-content-wrapper {
-  background-color: var(--bg-gold);
+  background-color: transparent;
   color: var(--secondary-text);
 }
 
 .post-popup {
   color: var(--secondary-text);
+  background-color: var(--bg-white);
   text-decoration: none;
+  border: 2px var(--border-dark) solid;
+  border-radius: 12px;
 }
 
 .post-popup a {
+  text-decoration: none;
+  margin: 0;
+}
+
+.post-popup a h2 {
+  border: 1px var(--border-dark) solid;
+  background-color: var(--bg-gold);
   color: var(--secondary-text);
   text-decoration: none;
+  padding: 5px;
+  border-radius: 6px;
+  margin: 0;
+}
+
+.post-popup p {
+  margin: 5px 10px 5px 10px;
 }
 
 /* mobile MQ */

@@ -133,12 +133,14 @@ async function makePostRequest(post_lat, post_lon) {
   const post_content = document.querySelector(
     'textarea[name="post-content"]'
   ).value;
+  const bar_name = document.querySelector('input[name="bar-name"]').value;
 
   const response = await fetch("/api/posts", {
     method: "POST",
     body: JSON.stringify({
       title,
       post_content,
+      bar_name,
       post_lat,
       post_lon,
     }),

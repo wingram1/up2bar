@@ -21,8 +21,14 @@ async function getPostLocations() {
 
 function mapPosts(posts) {
   // limit of 20 posts displayed at a time
-  for (let i = 0; i < posts.length - 1 || i <= 20; i++) {
+  for (let i = 0; i <= 20; i++) {
     let post = posts[i];
+
+    // if no post, break
+    if (!post) {
+      break;
+    }
+
     console.log(post);
     mapPost(post);
   }
