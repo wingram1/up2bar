@@ -1,8 +1,6 @@
 var map = null;
 const mapDivEl = document.querySelector("#map");
 
-// positionstack API key: 0162855f8db81c0556289d2f6c3e0a36
-
 // checks if browser supports geolocation
 function getLocation() {
   // if browser supports location, prompt for location and generate map
@@ -96,6 +94,25 @@ function mapPost(post) {
     );
 }
 
+var mapClick = function (e) {
+  // get lat and lon from the mouse click location
+  let lat = e.latlng.lat.toFixed(7);
+  let lon = e.latlng.lng.toFixed(7);
+
+  let latDisplay = document.querySelector("#lat-display");
+  let lonDisplay = document.querySelector("#lon-display");
+
+  // change value of lat/lon displays to equal lat/lon
+  if (latDisplay && lonDisplay) {
+    latDisplay.textContent = lat;
+    lonDisplay.textContent = lon;
+  }
+
+  // generate
+  console.log(lat, lon);
+};
+
 getLocation();
 getMap(36.1627, -86.7816);
 mapPost(post_1);
+map.on("click", mapClick);

@@ -55,10 +55,6 @@
   min-height: 100px;
 }
 
-#address-container {
-  visibility: visible;
-}
-
 #city-input {
   margin: 5px 0 5px 0;
 }
@@ -68,8 +64,8 @@
   height: 300px;
   border: solid var(--border-white) 1px;
   border-radius: 10px;
-  padding: 10px;
-  padding-bottom: 28px;
+  padding: 2px;
+  padding-bottom: 22px;
   margin: 0 auto 10px auto;
   background-color: var(--bg-gold);
 }

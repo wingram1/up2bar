@@ -22,7 +22,7 @@
                     <input type="radio" id="your-location" name="location" value="Use my location">
                     <label for="your-location">Use my location</label>
                 </div>
-                <div id="address-container">
+                <div id="address-container" style="visibility: hidden; max-height: 0;">
                     <label for="address">Enter Address:</label>
                     <input type="text" id="address-input" name="address" placeholder="2201 West End Ave"><br>
                     <label for="city">City:</label>
@@ -83,19 +83,17 @@
                                 <option value="WY">Wyoming</option>
                                 </select>
                 </div>
-                <div id="city-state-container">
-                </div>
-                <div id="new-post-map-container">
+                <div id="new-post-map-container" style="visibility: hidden; max-height: 0;">
                     <div id="map"></div>
                 </div>
-                <div id="latlon-display">
+                <div id="latlon-display" style="visibility: hidden; max-height: 0;">
                     <div>
                         <p class="latlon-label">Latitude:</p>
-                        <p id="lat-display">36.175720</p><br>
+                        <p id="lat-display"></p><br>
                     </div>
                     <div>
                         <p class="latlon-label">Longitude:</p>
-                        <p id="lon-display">-86.755699</p>
+                        <p id="lon-display"></p>
                     </div>
                 </div>
                 <button type="submit" class="post-btn">Post</button>
@@ -117,4 +115,4 @@
     {{/if}}
     </section>
 </div>
-<script src="/js/add-post.js"></script>
+<script src="/js/dashboard.js"></script>
