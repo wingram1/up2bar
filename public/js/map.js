@@ -70,7 +70,7 @@ function mapPost(post) {
     options: {
       iconUrl: "/images/flag-icon.png",
       iconSize: [40, 50],
-      iconAnchor: [22, 94],
+      iconAnchor: [25, 55],
       popupAnchor: [-3, -76],
     },
   });

@@ -30,6 +30,12 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+
+  background-image: url("/images/bg-img-2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 95%;
 }
 
 header {
@@ -135,7 +141,7 @@ button {
 }
 
 #map-container {
-  width: 40%;
+  width: 33%;
   height: 600px;
   border: solid var(--border-white) 1px;
   border-radius: 10px;
@@ -151,14 +157,13 @@ button {
 }
 
 #post-container {
-  /* min-height: 200px; */
-  max-width: 45%;
-  min-width: 45%;
+  min-width: 40%;
+  width: 40%;
   background-color: var(--bg-white);
   border: solid var(--border-white) 1px;
 
-  /* max-height: 100%;
-  overflow: auto; */
+  max-height: 75vh;
+  overflow: auto;
 }
 
 .post {
@@ -201,10 +206,19 @@ footer {
 @media only screen and (max-width: 1024px) {
   #map-container {
     height: 400px;
+    width: 40%;
+  }
+
+  #post-container {
+    width: 50%;
   }
 }
 /* tablets and smaller laptops */
 @media only screen and (max-width: 768px) {
+  body {
+    background-size: auto 100%;
+  }
+
   .homepage-content {
     flex-direction: column;
     justify-content: center;
@@ -217,7 +231,7 @@ footer {
   }
 
   #post-container {
-    max-width: 80%;
+    width: 80%;
   }
 
   .container {
