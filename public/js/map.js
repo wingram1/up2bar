@@ -5,10 +5,13 @@ const mapDivEl = document.querySelector("#map");
 function getLocation() {
   // if browser supports location, prompt for location and generate map
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getPosition);
+    navigator.geolocation.getCurrentPosition(getPosition, getDefaultPosition, {
+      timeout: 250,
+    });
   } else {
     //   else hardcode location to Nashville
     getMap(36.1627, -86.7816);
+    map.on("click", mapClick);
   }
 }
 
@@ -23,6 +26,13 @@ function getPosition(position) {
   );
   //   generate map using user position
   getMap(position.coords.latitude, position.coords.longitude);
+  map.on("click", mapClick);
+}
+
+// default function to hardcode nashville if user doesn't want to share location
+function getDefaultPosition() {
+  getMap(36.1627, -86.7816);
+  map.on("click", mapClick);
 }
 
 // function to generate map
@@ -54,17 +64,6 @@ function getMap(lat, lon) {
   }
 }
 
-// sample post
-let post_1 = {
-  id: 20,
-  title: "Come see aliens at the Flying Saucer!",
-  post_content:
-    "Shit's wild, yo! You need to see how fast they're downing these shots!",
-  user_id: 4,
-  lat: 35.1637,
-  lon: -89.7935,
-};
-
 // test function for pop-ups
 function mapPost(post) {
   var flagIcon = L.Icon.extend({
@@ -79,7 +78,7 @@ function mapPost(post) {
   var postIcon = new flagIcon();
 
   // add marker
-  L.marker([post.lat, post.lon], { icon: postIcon })
+  L.marker([post.post_lat, post.post_lon], { icon: postIcon })
     .addTo(map)
     .bindPopup(
       `
@@ -88,13 +87,14 @@ function mapPost(post) {
             <p> ${post.post_content}</p>
       </div>`,
       {
-        closeOnClick: false,
         autoClose: false,
       }
     );
 }
 
 var mapClick = function (e) {
+  console.log("Map was clicked");
+
   // get lat and lon from the mouse click location
   let lat = e.latlng.lat.toFixed(7);
   let lon = e.latlng.lng.toFixed(7);
@@ -113,6 +113,3 @@ var mapClick = function (e) {
 };
 
 getLocation();
-getMap(36.1627, -86.7816);
-mapPost(post_1);
-map.on("click", mapClick);

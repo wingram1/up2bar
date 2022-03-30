@@ -62,7 +62,7 @@ async function getPostCoords() {
       }
     case "Map click":
       makePostRequest(
-        document.querySelector("#lon-display").textContent,
+        document.querySelector("#lat-display").textContent,
         document.querySelector("#lon-display").textContent
       );
     case "Use my location":
@@ -150,7 +150,7 @@ async function makePostRequest(post_lat, post_lon) {
       console.log(response);
       document.location.replace("/dashboard");
     } else {
-      alert(response.statusText);
+      console.log(response.statusText);
     }
   });
 }
