@@ -81,8 +81,8 @@ router.post("/", withAuth, (req, res) => {
     post_content: req.body.post_content,
     user_id: req.session.user_id,
     bar_name: req.body.bar_name,
-    lat: req.body.lat,
-    lon: req.body.lon,
+    post_lat: req.body.post_lat,
+    post_lon: req.body.post_lon,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {

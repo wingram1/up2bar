@@ -126,7 +126,7 @@ async function newFormHandler(event) {
 }
 
 // make post request with found lat + lon
-function makePostRequest(post_lat, post_lon) {
+async function makePostRequest(post_lat, post_lon) {
   console.log("final callback: " + post_lat, post_lon);
 
   const title = document.querySelector('input[name="post-title"]').value;
@@ -134,7 +134,7 @@ function makePostRequest(post_lat, post_lon) {
     'textarea[name="post-content"]'
   ).value;
 
-  const response = fetch("/api/posts", {
+  const response = await fetch("/api/posts", {
     method: "POST",
     body: JSON.stringify({
       title,
@@ -145,14 +145,14 @@ function makePostRequest(post_lat, post_lon) {
     headers: {
       "Content-Type": "application/json",
     },
+  }).then((response) => {
+    if (response.ok) {
+      console.log(response);
+      document.location.replace("/dashboard");
+    } else {
+      alert(response.statusText);
+    }
   });
-
-  if (response.ok) {
-    console.log(response);
-    document.location.replace("/dashboard");
-  } else {
-    alert(response.statusText);
-  }
 }
 
 // EVENT LISTENERS
