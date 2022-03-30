@@ -3,6 +3,9 @@
     
     <div>
     <h2 class="post-title"><b>{{post.title}}</b></h2>
+    {{#if post.bar_name}}
+        <p class="meta">at: {{post.bar_name}}</p>
+    {{/if}}
     <p class="meta">By {{post.user.username}} on {{format_date post.created_at}}</p>
     <div class="post-content-container">
         {{!-- TODO: make link to user profile? --}}

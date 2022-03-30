@@ -1,6 +1,8 @@
 var map = null;
 const mapDivEl = document.querySelector("#map");
 
+// positionstack API key: 0162855f8db81c0556289d2f6c3e0a36
+
 // checks if browser supports geolocation
 function getLocation() {
   // if browser supports location, prompt for location and generate map
