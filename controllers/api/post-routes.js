@@ -7,7 +7,15 @@ const withAuth = require("../../utils/auth");
 router.get("/", (req, res) => {
   console.log("======================");
   Post.findAll({
-    attributes: ["id", "title", "created_at", "post_content",  "bar_name", "post_lat", "post_lon"],
+    attributes: [
+      "id",
+      "title",
+      "created_at",
+      "post_content",
+      "bar_name",
+      "post_lat",
+      "post_lon",
+    ],
     order: [["created_at", "DESC"]],
     include: [
       {
@@ -72,6 +80,9 @@ router.post("/", withAuth, (req, res) => {
     title: req.body.title,
     post_content: req.body.post_content,
     user_id: req.session.user_id,
+    bar_name: req.body.bar_name,
+    lat: req.body.lat,
+    lon: req.body.lon,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
