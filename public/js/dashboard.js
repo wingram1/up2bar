@@ -78,14 +78,14 @@ async function getPostCoords() {
 
 async function geocodeAddress(address, city, state) {
   // positionstack API key: 0162855f8db81c0556289d2f6c3e0a36
+  // https://www.mapquestapi.com/geocoding/v1/address?key=OW6OL7UGlBCqlTlkyLwDmVg9djjuXoET&location=Washington,DC
   var apiUrl =
-    "http://api.positionstack.com/v1/forward?access_key=0162855f8db81c0556289d2f6c3e0a36&query=" +
-    address +
-    ",%20" +
+    "https://www.mapquestapi.com/geocoding/v1/address?key=OW6OL7UGlBCqlTlkyLwDmVg9djjuXoET&location=" +
+    address.trim().replaceAll(" ", ",") +
+    "," +
     city +
-    ",%20" +
-    state +
-    ",%20USA";
+    "," +
+    state;
 
   console.log(apiUrl);
 
@@ -95,11 +95,15 @@ async function geocodeAddress(address, city, state) {
         "Connection to PositionStack Forward Geocoding API successful"
       );
       response.json().then(function (data) {
+        console.log(data.results[0].locations);
         console.log(
-          "address latlong: " + data.data[0].latitude,
-          data.data[0].longitude
+          "address latlong: " + data.results[0].locations[0].latLng.lat,
+          data.results[0].locations[0].latLng.lng
         );
-        makePostRequest(data.data[0].latitude, data.data[0].longitude);
+        makePostRequest(
+          data.results[0].locations[0].latLng.lat,
+          data.results[0].locations[0].latLng.lng
+        );
       });
     }
   });
