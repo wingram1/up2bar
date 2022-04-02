@@ -5,6 +5,15 @@ async function signupFormHandler(event) {
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
+    if (!username) {
+      alert('Please enter a username');
+      return;
+    } 
+    if (password.length < 8 ) {
+      alert('Please enter a password at least 8 characters long');
+      return;
+    }
+
     if (username && email && password) {
         const response = await fetch('/api/users', {
             method: 'post', 
@@ -20,7 +29,7 @@ async function signupFormHandler(event) {
             console.log('success')
             document.location.replace('/dashboard/')
         } else {
-            alert(response.statusText);
+            alert('Error connecting to server');
         }
     }
 }
