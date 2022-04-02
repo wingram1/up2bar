@@ -66,6 +66,17 @@ function getMap(lat, lon) {
 
 // test function for pop-ups
 function mapPost(post) {
+  // add marker
+  new L.marker([post.post_lat, post.post_lon], { icon: renderFlagIcon() })
+    .addTo(map)
+    .bindPopup(renderPostPopup(post), {
+      autoClose: false,
+    });
+}
+
+function renderFlagIcon() {
+  console.log("rendering flag icon...");
+
   var flagIcon = L.Icon.extend({
     options: {
       iconUrl: "/images/flag-icon.png",
@@ -75,14 +86,7 @@ function mapPost(post) {
     },
   });
 
-  var postIcon = new flagIcon();
-
-  // add marker
-  L.marker([post.post_lat, post.post_lon], { icon: postIcon })
-    .addTo(map)
-    .bindPopup(renderPostPopup(post), {
-      autoClose: false,
-    });
+  return new flagIcon();
 }
 
 function renderPostPopup(post) {
@@ -109,11 +113,25 @@ var mapClick = function (e) {
   let lat = e.latlng.lat.toFixed(7);
   let lon = e.latlng.lng.toFixed(7);
 
+  // map moves to & zooms in on click location
+  map.flyTo([parseFloat(lat) + 0.009, parseFloat(lon) + 0.0005], 14);
+
   let latDisplay = document.querySelector("#lat-display");
   let lonDisplay = document.querySelector("#lon-display");
 
   // change value of lat/lon displays to equal lat/lon
   if (latDisplay && lonDisplay) {
+    // select & delete old map icon
+    let oldIcon = document.querySelector('img[src="/images/flag-icon.png"]');
+
+    if (oldIcon) {
+      oldIcon.remove();
+    }
+
+    // add flag to clicked location
+    L.marker([lat, lon], { icon: renderFlagIcon() }).addTo(map);
+
+    // set lat & lon labels
     latDisplay.textContent = lat;
     lonDisplay.textContent = lon;
   }
