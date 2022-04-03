@@ -17,6 +17,9 @@ Webpage where bar-seekers can seek bars in their present or future locations
 - SQL
 - Express
 - Handlebars
+- MapQuest Geocoding API
+- Leaflet
+- OpenStreetMaps
 
 ## Webpage
 
