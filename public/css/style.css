@@ -219,6 +219,7 @@ footer {
 @media only screen and (max-width: 768px) {
   body {
     background-size: auto 100%;
+    width: 100%;
   }
 
   .homepage-content {
