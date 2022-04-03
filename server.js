@@ -5,7 +5,6 @@ const path = require("path");
 const routes = require("./controllers");
 const exphbs = require("express-handlebars");
 
-
 // middleware
 const app = express();
 const PORT = process.env.PORT || 3006;
